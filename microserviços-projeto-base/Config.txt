@@ -1,0 +1,17 @@
+Group: project 
+Artifact: config-service
+Name: config-service
+Description: Projeto Base para Microserviços
+Package name: project.config
+
+
+**** config-service ****
+port: 8081
+
+
+**** registry-service ****
+port: 8099
+
+
+**** gateway-service ****
+port: 8080

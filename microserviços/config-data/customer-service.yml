@@ -1,0 +1,53 @@
+
+# ========== Server =========
+server:
+  port: 8092
+# ============================
+
+# ========== DB ==============
+spring:
+  h2:
+    console:
+      enable: true
+    datasource:
+      url: jdbc:h2:men:CustomerDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      driverClassName: org.h2.Driver
+      platform: h2
+      username: sa
+      password:
+# ============================
+
+# ===== JPA / HIBERNATE ======
+jpa:
+  show-sql: true
+  hibernate:
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properies:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        formate_sql: false
+
+  loggin:
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5P} %m%n"
+# ============================
+
+# ===== EUREKA SERVICE =======
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+# ============================
+
+# ===== HYsTRIX SERVICE ======
+Feign:
+  hystriy:
+    enable: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# ============================
